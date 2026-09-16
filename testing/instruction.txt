@@ -1,0 +1,59 @@
+Act as a Principal Frontend Engineer and Senior Product Designer. Build a high-converting, enterprise-grade Sales Dashboard split into three clean files: `index.html`, `styles.css`, and `app.js`.
+
+Use standard HTML5, CSS3 (with custom CSS variables or custom utility-based layout), and Vanilla JavaScript (ES6+). Do NOT bundle everything into HTML. Keep code modular, well-commented, and production-ready.
+
+---
+
+### FILE 1: `index.html`
+- Include proper meta tags, link `styles.css`, and load Lucide Icons (via CDN) and Chart.js (via CDN). Link `app.js` with `defer`.
+- Structure the DOM semantically:
+  1. `<aside>` Sidebar Navigation:
+     - Brand logo with a geometric mark + company name.
+     - Nav items: Overview (Active), Pipeline, Customers, Analytics, Reports, Settings.
+     - User profile footer at the bottom (Avatar with initials, Name, Role).
+  2. `<header>` Top Bar:
+     - Search bar with shortcut pill (`⌘K`).
+     - Date range filter dropdown ("Last 30 Days", "This Quarter", "Custom").
+     - "Export Report" primary action button and Notification bell with notification badge.
+  3. `<main>` Content Area:
+     - KPI Section: 4 Metric Cards (Total Revenue, Avg Order Value, Conversion Rate, Active Deals) with trend badges and canvas containers for sparkline charts.
+     - Charts Grid: 
+       - Main Chart Card (70% width): Canvas element `#revenueChart` ("Revenue vs Target").
+       - Secondary Chart Card (30% width): Canvas element `#categoryChart` ("Sales by Category").
+     - Data Table Section:
+       - Header bar with search input and filter buttons.
+       - Table with columns: Customer (Avatar + Email), Deal Stage, Amount, Status Badge, Date, Actions.
+       - Footer pagination controls.
+
+---
+
+### FILE 2: `styles.css`
+Design Aesthetic Directives (Strict Anti-AI Template Look):
+- Theme: Deep Slate Dark Mode (#0B0F17 canvas, #161C28 cards, #262E40 borders). Pure black (#000) is forbidden.
+- Typography: Use Google Font 'Plus Jakarta Sans' or 'Inter'. Strict micro-typography (explicit letter-spacing/tracking, uppercase text-xs for labels).
+- Colors: Primary accent #3B82F6 (Electric Blue) or #10B981 (Emerald). Neutral text hierarchy (#F8FAFC primary, #94A3B8 secondary, #64748B muted).
+- Styling Details:
+  - 1px crisp borders (`border: 1px solid #262E40`) instead of heavy shadows/glows.
+  - Soft pastel badges for statuses (e.g., green `rgba(16, 185, 129, 0.1)` with emerald text for 'Completed').
+  - Custom scrollbar styling matching the dark theme.
+  - Responsive flexbox/grid architecture with clean breakpoint media queries.
+
+---
+
+### FILE 3: `app.js`
+1. Chart.js Initialization:
+   - Configure global Chart.js defaults to fit dark mode (border colors `#262E40`, tick colors `#64748B`, custom tooltips with dark background and rounded corners).
+   - Render `#revenueChart`: Area chart with subtle gradient fill and smooth tension curves.
+   - Render `#categoryChart`: Donut chart with modern offset padding and cutout radius.
+   - Render 4 mini sparkline line charts inside the top KPI cards (no gridlines, no axes).
+2. UI Interactivity:
+   - Live client-side search/filter logic for the transactions table.
+   - Dropdown toggle states and active navigation item state handler.
+   - Mobile sidebar toggle support.
+
+---
+
+Provide the response separated clearly into 3 distinct code blocks: 
+1. `index.html` 
+2. `styles.css` 
+3. `app.js`
