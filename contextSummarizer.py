@@ -1,5 +1,5 @@
 import requests
-from CONFIG import MODEL, URL
+from CONFIG import URL, PLAN_MODEL
 
 SUMMARY_SYSTEM_PROMPT = (
     "You are a summarization assistant. You will be given a conversation transcript "
@@ -37,7 +37,7 @@ def _summarize_raw(messages):
         {"role": "user", "content": transcript}
     ]
     response = requests.post(URL, json={
-        "model": MODEL,
+        "model": PLAN_MODEL,
         "messages": summary_messages,
         "options": {"temperature": 0.0},
         "stream": False
